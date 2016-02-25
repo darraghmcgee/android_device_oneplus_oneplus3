@@ -36,8 +36,9 @@ on early-init
     mkdir /dsp 0771 media media
 
 on fs
-    wait /dev/block/bootdevice
-    mount_all fstab.qcom
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    mount_all fstab.qcom --early
     swapon_all fstab.qcom
 
     mkdir /persist/data 0700 system system
@@ -590,7 +591,7 @@ on property:sys.rainbow.recovery=1
     write /sys/class/leds/blue/duty_pcts "0,0,0,0,100,100,100"
     write /sys/class/leds/blue/pause_hi 0
     write /sys/class/leds/blue/pause_lo 0
-    write /sys/class/leds/blue/ramp_step_ms 100
+ait /dev/block/bootdevice    write /sys/class/leds/blue/ramp_step_ms 100
     write /sys/class/leds/rgb/rgb_blink 1
 
 on property:sys.rainbow.recovery=0
