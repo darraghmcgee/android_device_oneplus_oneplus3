@@ -1,7 +1,6 @@
 /*
    Copyright (c) 2016, The CyanogenMod Project
              (c) 2017, The LineageOS Project
-
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -34,11 +33,12 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include "vendor_init.h"
-#include "property_service.h"
-#include "log.h"
-#include "util.h"
+#include <android-base/properties.h>
 
+#include "property_service.h"
+
+namespace android {
+namespace init {
 void property_override(char const prop[], char const value[])
 {
     prop_info *pi;
@@ -120,7 +120,7 @@ void load_op3t(const char *model) {
 }
 
 void vendor_load_properties() {
-    int rf_version = stoi(property_get("ro.boot.rf_version"));
+    int rf_version = stoi(android::base::GetProperty("ro.boot.rf_version"));
 
     switch (rf_version) {
     case 11:
@@ -161,3 +161,5 @@ void vendor_load_properties() {
 
     init_alarm_boot_properties();
 }
+} // namespace init
+} // namespace android
