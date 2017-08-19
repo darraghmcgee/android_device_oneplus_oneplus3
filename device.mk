@@ -207,7 +207,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.msm8996 \
     libcurl \
-    libgnsspps
+    libgnsspps \
+    libshims_get_process_name
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
@@ -343,7 +344,6 @@ PRODUCT_PACKAGES += \
 # VR
 PRODUCT_PACKAGES += \
     vr.msm8996
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml
 
