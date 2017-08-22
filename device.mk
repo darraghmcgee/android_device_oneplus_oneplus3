@@ -152,6 +152,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libbt-vendor \
     android.hardware.bluetooth@1.0-impl
+
 # Bluetooth
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/iot_devlist.conf:system/etc/bluetooth/iot_devlist.conf
@@ -171,17 +172,15 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8996 \
-    gralloc.msm8996 \
-    hwcomposer.msm8996 \
-    memtrack.msm8996 \
-    liboverlay \
-    libtinyxml \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
-    android.hardware.graphics.composer@2.1-impl
+    gralloc.msm8996 \
+    hwcomposer.msm8996 \
+    libgenlock \
+    memtrack.msm8996
 
 # Display calibration
 PRODUCT_PACKAGES += \
@@ -302,7 +301,8 @@ PRODUCT_COPY_FILES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libtinyxml
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -319,6 +319,10 @@ PRODUCT_PACKAGES += \
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_op3
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # RIL
 PRODUCT_PACKAGES += \
