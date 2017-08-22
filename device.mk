@@ -112,15 +112,11 @@ PRODUCT_BOOT_JARS += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audiod \
-    audio.a2dp.default \
     audio.primary.msm8996 \
-    audio.r_submix.default \
+    audio.a2dp.default \
     audio.usb.default \
+    audio.r_submix.default \
     libaudio-resampler \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
     libvolumelistener \
     tinymix
 
