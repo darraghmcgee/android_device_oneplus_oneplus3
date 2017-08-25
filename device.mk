@@ -333,7 +333,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.msm8996
+    sensors.msm8996 \
+    android.hardware.sensors@1.0-impl
 
 # Thermal
 PRODUCT_PACKAGES += \
