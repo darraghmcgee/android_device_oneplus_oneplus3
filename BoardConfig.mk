@@ -190,7 +190,7 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+# BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
