@@ -364,8 +364,6 @@ PRODUCT_PACKAGES += \
    # ipacm \
    # ipacm-diag \
    # IPACM_cfg.xml \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
     libwpa_client \
     wificond \
     hostapd \
