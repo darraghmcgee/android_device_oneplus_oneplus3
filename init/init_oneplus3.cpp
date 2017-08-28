@@ -38,6 +38,7 @@
 #include "vendor_init.h"
 #include "log.h"
 
+using android::base::GetProperty;
 
 void property_override(char const prop[], char const value[])
 {
