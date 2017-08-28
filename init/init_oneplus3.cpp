@@ -13,7 +13,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -36,9 +35,10 @@
 #include <android-base/properties.h>
 
 #include "property_service.h"
+#include "vendor_init.h"
+#include "log.h"
 
-namespace android {
-namespace init {
+
 void property_override(char const prop[], char const value[])
 {
     prop_info *pi;
@@ -59,7 +59,7 @@ static int read_file2(const char *fname, char *data, int max_size)
 
     fd = open(fname, O_RDONLY);
     if (fd < 0) {
-        ERROR("failed to open '%s'\n", fname);
+        LOG(ERROR) << "failed to open '" << fname << "'\n";
         return 0;
     }
 
@@ -116,11 +116,10 @@ void load_op3t(const char *model) {
     property_override("ro.product.device", "OnePlus3T");
     property_override("ro.build.description", "OnePlus3-user 7.1.1 NMF26F 69 dev-keys");
     property_override("ro.build.fingerprint", "OnePlus/OnePlus3/OnePlus3T:7.1.1/NMF26F/08101230:user/release-keys");
-    property_set("ro.power_profile.override", "power_profile_3t");
 }
 
 void vendor_load_properties() {
-    int rf_version = stoi(android::base::GetProperty("ro.boot.rf_version"));
+    int rf_version = stoi(android::base::GetProperty("ro.boot.rf_version", ""));
 
     switch (rf_version) {
     case 11:
@@ -156,10 +155,8 @@ void vendor_load_properties() {
         property_set("persist.radio.force_on_dc", "true");
         break;
     default:
-        INFO("%s: unexcepted rf version!\n", __func__);
+        LOG(INFO) << __func__ << ": unexcepted rf version!\n";
     }
 
     init_alarm_boot_properties();
 }
-} // namespace init
-} // namespace android
