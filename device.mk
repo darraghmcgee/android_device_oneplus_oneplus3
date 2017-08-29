@@ -112,6 +112,8 @@ PRODUCT_BOOT_JARS += \
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
     audio.primary.msm8996 \
     audio.a2dp.default \
     audio.usb.default \
@@ -187,8 +189,8 @@ PRODUCT_PACKAGES += \
     qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
 
 # DRM
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
+# PRODUCT_PACKAGES += \
+   # android.hardware.drm@1.0-impl \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
@@ -198,12 +200,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# Gatekeeper HAL
+ PRODUCT_PACKAGES += \
+     android.hardware.gatekeeper@1.0-impl
+
 # GNSS HAL
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl
 
 # GPS
 PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0 \
     gps.msm8996 \
     libcurl \
     libgnsspps \
