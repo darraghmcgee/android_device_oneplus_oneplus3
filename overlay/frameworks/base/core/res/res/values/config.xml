@@ -73,7 +73,7 @@
          Must be in the range specified by minimum and maximum. -->
     <integer name="config_screenBrightnessSettingDefault">46</integer>
 
-    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+   <!-- <bool name="config_deviceHasVariableButtonBrightness">true</bool> -->
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
@@ -404,8 +404,8 @@
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
 
-    <!-- Enable blur support -->
-    <bool name="config_uiBlurEnabled">true</bool>
+    <!-- Enable blur support 
+    <bool name="config_uiBlurEnabled">true</bool> -->
 
     <!-- Default list of files pinned by the Pinner Service -->
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
@@ -415,8 +415,8 @@
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
    </string-array>
 
-    <!-- Whether notify fingerprint client of successful cancelled authentication -->
-    <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
+    <!-- Whether notify fingerprint client of successful cancelled authentication
+    <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool> -->
 
     <!-- Device configuration setting the minfree tunable in the lowmemorykiller in the kernel.
          A high value will cause the lowmemorykiller to fire earlier, keeping more memory
