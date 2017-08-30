@@ -169,6 +169,10 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
+# Default OMX service to non-Treble
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.media.treble_omx=false
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -380,6 +384,7 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     libwpa_client \
     wificond \
+    wifilogd \
     hostapd \
     dhcpcd.conf \
     wpa_supplicant \
