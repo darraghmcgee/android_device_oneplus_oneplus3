@@ -154,7 +154,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/iot_devlist.conf:system/etc/bluetooth/iot_devlist.conf
 
 # Camera
-# PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libcamera_shim \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl
@@ -229,7 +229,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
 
 # HIDL
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
 
 # IPv6
