@@ -24,10 +24,9 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.text.TextUtils;
 import android.util.Log;
-
 import java.util.List;
 
-import org.lineageos.internal.util.FileUtils;
+import com.android.internal.util.aosip.FileUtils;
 
 public class PocketSensor implements SensorEventListener {
 
