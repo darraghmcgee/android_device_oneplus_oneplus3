@@ -406,8 +406,51 @@
     <!-- Whether the always on display mode is available. -->
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
 
+    <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
+    <bool name="config_displayBlanksAfterDoze">false</bool>
+
     <!-- Control whether the always on display mode is enabled by default. This value will be used
          during initialization when the setting is still null. -->
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
+   <!-- Should we filter any display modes which are unampped? -->
+   <bool name="config_filterDisplayModes">true</bool
+
+ <!-- Display mode remapping table.
+        If the mode names returned by the backend do not match
+        the predefined and translated strings in the Settings
+        app, they can be remapped here. The format is
+        "oldname:newname", one per entry. -->
+   <string-array name="config_displayModeMappings" translatable="false">
+       <item>default:standard</item>
+       <item>xianyan:dynamic</item>
+       <item>ziran:photography</item>
+       <item>rouhe:basic</item>
+       <item>movie:cinema</item>
+   </string-array>
+
+    <!-- Statusbar Burn in protection -->
+    <bool name="config_statusBarBurnInProtection">true</bool>
+
+    <!-- Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
+
+    <!-- Override the default detection behavior for the framework method
+         android.view.ViewConfiguration#hasPermanentMenuKey().
+         Valid settings are:
+         0 - No change. Use the default autodetection behavior.
+         1 - The device DOES have a permanent menu key; ignore autodetection.
+         2 - The device DOES NOT have a permanent menu key; ignore autodetection. -->
+    <integer name="config_overrideHasPermanentMenuKey">2</integer
+
+    <!-- Whether device has dash charging support -->
+    <bool name="config_hasDashCharger">true</bool>
+
+<!-- Default state for LiveDisplay -->
+    <bool name="config_liveDisplayAvailable">true</bool>
+
+   <!-- Use default display mode -->
+    <integer name="config_defaultLiveDisplayMode">0</integer>
+
 </resources>
+
