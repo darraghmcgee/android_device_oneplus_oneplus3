@@ -29,6 +29,15 @@
         <item>"rndis\\d"</item>
     </string-array>
 
+    <!-- Whether key handler sends intent when changing slider position -->
+    <string name="config_alertSliderIntent">org.lineageos.device.DeviceSettings.UPDATE_SLIDER_POSITION</string>
+
+    <!-- Names of the key handler classes -->
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>org.lineageos.device.DeviceSettings.KeyHandler</item>
+        <item>com.android.touch.gestures.KeyHandler</item>
+    </string-array>
+
     <!-- Dhcp range (min, max) to use for tethering purposes -->
     <!-- USB is  192.168.42.1 and 255.255.255.0
          Wifi is 192.168.43.1 and 255.255.255.0

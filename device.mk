@@ -26,6 +26,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 
+# include oneplus settings repo
+$(call inherit-product, device/oneplus/settings/settings.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
@@ -251,10 +254,6 @@ PRODUCT_PACKAGES += \
     FOSSConfig.xml \
     qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml \
     qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
-
-# Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
 
 # DRM
 PRODUCT_PACKAGES += \
